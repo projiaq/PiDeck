@@ -121,7 +121,7 @@ export function SidebarLayout({
         data-tauri-drag-region
       >
         <PiMark className="mac-sidebar-brand-mark size-8" />
-        <span className="text-[15px] font-semibold">Pi Agent</span>
+        <span className="text-[15px] font-semibold">kinglongv5</span>
         <div className="ml-auto">
           <NotificationCenter />
         </div>
