@@ -13,6 +13,8 @@ import {
   readFileSync,
   renameSync,
   statSync,
+  lstatSync,
+  unlinkSync,
 } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -44,6 +46,41 @@ function die(msg) {
 
 function sha256File(path) {
   return createHash("sha256").update(readFileSync(path)).digest("hex");
+}
+
+// pnpm stores the production tree as hardlinks into the content-addressable
+// store. Windows bsdtar (System32\tar.exe) archives hardlinked file *records*
+// rather than their contents, silently emitting empty/absent entries for
+// shared files (e.g. yaml/dist/schema/yaml-1.1/merge.js). Rewriting any
+// nlink > 1 file to a fresh real file guarantees the archive carries the
+// content.
+function materializeHardlinks(dir) {
+  for (const name of readdirSync(dir)) {
+    const path = join(dir, name);
+    let stats;
+    try {
+      stats = lstatSync(path);
+    } catch {
+      continue;
+    }
+    if (stats.isDirectory()) {
+      materializeHardlinks(path);
+      continue;
+    }
+    if (!stats.isFile() || (stats.nlink ?? 1) <= 1) continue;
+    const tmp = `${path}.materialize`;
+    try {
+      copyFileSync(path, tmp);
+      unlinkSync(path);
+      renameSync(tmp, path);
+    } catch {
+      try {
+        rmSync(tmp, { force: true });
+      } catch {
+        /* best-effort */
+      }
+    }
+  }
 }
 
 // Windows ships bsdtar at System32\tar.exe (supports -a zip and drive-letter
@@ -156,6 +193,7 @@ if (!zipOk) {
       "[compact] creating node_modules.zip from portable pnpm store; links:",
       detached.manifest.links.length,
     );
+    if (process.platform === "win32") materializeHardlinks(nm);
     const tar = createNodeModulesZip();
     if (tar.status !== 0 || !existsSync(zipPath) || statSync(zipPath).size < MIN_ZIP_BYTES) {
       console.error(tar.stdout ?? "", tar.stderr ?? tar.error?.message ?? "");
