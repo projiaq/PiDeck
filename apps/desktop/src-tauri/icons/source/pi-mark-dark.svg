@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- KL monogram for LIGHT backgrounds (dark stroke) -->
+  <path d="M296 268 L296 756" stroke="#171918" stroke-width="72" stroke-linecap="round" fill="none"/>
+  <path d="M344 372 L640 268" stroke="#171918" stroke-width="72" stroke-linecap="round" fill="none"/>
+  <path d="M344 508 L648 756" stroke="#171918" stroke-width="72" stroke-linecap="round" fill="none"/>
+  <path d="M660 268 L660 692" stroke="#d45d2d" stroke-width="72" stroke-linecap="round" fill="none"/>
+  <path d="M660 692 L848 692" stroke="#d45d2d" stroke-width="72" stroke-linecap="round" fill="none"/>
+</svg>

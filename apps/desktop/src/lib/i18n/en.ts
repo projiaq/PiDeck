@@ -27,7 +27,7 @@ export const en = {
   commandStopGeneration: "Stop generation",
   commandShowShortcuts: "Show keyboard shortcuts",
   shortcutsTitle: "Keyboard shortcuts",
-  shortcutsSubtitle: "Customize commands active while PiDeck is focused",
+  shortcutsSubtitle: "Customize commands active while kinglongv5 is focused",
   shortcutsUnassigned: "Unassigned",
   shortcutsRecord: "Change shortcut for {command}",
   shortcutsRecording: "Press shortcut...",
@@ -62,7 +62,7 @@ export const en = {
   sessionsCopyPathFailed: "Could not copy the session path",
 
   // Startup
-  startupPreparing: "Preparing PiDeck",
+  startupPreparing: "Preparing kinglongv5",
   startupStartingHost: "Starting Pi Host",
   startupRestoringWorkspace: "Restoring workspace",
   startupRestoringSession: "Restoring session",
@@ -71,7 +71,7 @@ export const en = {
 
   // Settings shell
   settingsTitle: "Settings",
-  settingsSubtitle: "Configure PiDeck and its runtime",
+  settingsSubtitle: "Configure kinglongv5 and its runtime",
   settingsBack: "Back to conversation",
   navGeneral: "General",
   navShortcuts: "Shortcuts",
@@ -94,13 +94,13 @@ export const en = {
   generalThemeLight: "Light",
   generalThemeDark: "Dark",
   generalLanguage: "Language",
-  generalLanguageDesc: "Language of the PiDeck interface.",
+  generalLanguageDesc: "Language of the kinglongv5 interface.",
   generalConversationWidth: "Conversation width",
   generalConversationWidthDesc:
     "Maximum width for messages, the composer, and inline panels. Minimum {min}px.",
   generalConversationWidthError: "Enter a whole number of at least {min}px.",
   generalRestoreSession: "Restore last session",
-  generalRestoreSessionDesc: "Reopen your last workspace and conversation when PiDeck starts.",
+  generalRestoreSessionDesc: "Reopen your last workspace and conversation when kinglongv5 starts.",
   generalAutoRestart: "Auto-restart Pi Host",
   generalAutoRestartDesc:
     "If the host process crashes, restart it once automatically before showing an error.",
@@ -152,14 +152,14 @@ export const en = {
   hostAboutGroup: "About",
   hostUpdateCheck: "Check for updates",
   hostUpdateChecking: "Checking…",
-  hostUpdateUpToDate: "PiDeck is up to date.",
+  hostUpdateUpToDate: "kinglongv5 is up to date.",
   hostUpdateAvailable: "Version {version} is available.",
   hostUpdateInstall: "Download and restart",
   hostUpdateDownloading: "Downloading update…",
   hostUpdateProgress: "{percent}% downloaded",
   hostUpdateInstalling: "Installing update…",
   hostUpdateBackground: "You can leave Settings; the update will continue in the background.",
-  notifUpdateAvailable: "PiDeck {version} is available — install it from Settings → Host",
+  notifUpdateAvailable: "kinglongv5 {version} is available — install it from Settings → Host",
   notifUpdateCheckFailed: "Update check failed",
   notifUpdateInstallFailed: "Update install failed",
   notifAgentDirChanged: "Agent directory changed — restart Pi Host to apply",
@@ -475,7 +475,7 @@ export const en = {
   packagesRemoveReviewTitle: "Remove package",
   packagesRemoveConfirm: "Remove package",
   packagesRemoveWarning:
-    "This removes the package and its resources from the Agent. Removal cannot be undone from PiDeck.",
+    "This removes the package and its resources from the Agent. Removal cannot be undone from kinglongv5.",
   packagesProjectGateTitle: "Confirm project resource change",
   packagesProjectGateConfirm: "Apply change",
   packagesProjectGateBody:
@@ -740,7 +740,7 @@ export const en = {
   composerSendFailed: "Send failed",
   composerPromptFailed: "Prompt failed",
   composerLoginGuidance:
-    "PiDeck manages credentials in Settings — choose a provider and sign in there.",
+    "kinglongv5 manages credentials in Settings — choose a provider and sign in there.",
   composerAbortFailed: "Abort failed",
   composerRemoveFile: "Remove file",
   composerRemoveNamedFile: "Remove {name}",

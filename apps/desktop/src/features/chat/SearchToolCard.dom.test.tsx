@@ -28,11 +28,11 @@ describe("SearchToolCard link routing", () => {
       <SearchToolCard
         name="web_search"
         status="done"
-        args={{ query: "PiDeck docs" }}
+        args={{ query: "kinglongv5 docs" }}
         result={{
           results: [
             {
-              title: "PiDeck documentation",
+              title: "kinglongv5 documentation",
               url: "https://example.com/docs",
               snippet: "Documentation",
             },
@@ -42,7 +42,7 @@ describe("SearchToolCard link routing", () => {
     );
 
     await user.click(screen.getByRole("button", { expanded: false }));
-    const link = screen.getByRole("link", { name: /PiDeck documentation/u });
+    const link = screen.getByRole("link", { name: /kinglongv5 documentation/u });
     expect(link).toHaveAttribute("href", "https://example.com/docs");
     expect(link).not.toHaveAttribute("target");
     expect(link).toHaveAttribute("title", expect.stringContaining("Open in Dock browser"));

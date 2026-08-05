@@ -555,7 +555,7 @@ export function SettingsPage({
 
       <div className="flex min-h-0 flex-1">
         <nav className="w-52 shrink-0 border-r border-border bg-sidebar px-3 py-4">
-          <p className="mb-2 px-2 text-[11px] font-medium text-muted">PiDeck</p>
+          <p className="mb-2 px-2 text-[11px] font-medium text-muted">kinglongv5</p>
           {SETTINGS_NAV.map(({ id, label, icon: Icon }) => (
             <button
               key={id}

@@ -4,8 +4,8 @@ export type BuiltinCommand = {
   argumentHint?: string;
 };
 
-/** Slash commands PiDeck executes locally instead of sending to the model.
- * A subset of Pi's built-in command set; grows as PiDeck implements more. */
+/** Slash commands kinglongv5 executes locally instead of sending to the model.
+ * A subset of Pi's built-in command set; grows as kinglongv5 implements more. */
 export const BUILTIN_COMMANDS: readonly BuiltinCommand[] = [
   {
     name: "compact",

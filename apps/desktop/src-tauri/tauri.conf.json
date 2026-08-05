@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "PiDeck",
+  "productName": "kinglongv5",
   "version": "0.1.4",
   "identifier": "com.skitre.pideck",
   "build": {
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "PiDeck",
+        "title": "kinglongv5",
         "width": 1280,
         "height": 800,
         "minWidth": 960,

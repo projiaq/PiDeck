@@ -88,7 +88,7 @@ class MarkdownRenderBoundary extends Component<
   componentDidCatch(error: Error): void {
     // Syntax highlighting is optional; keep the transcript usable when its
     // lazy chunk is stale or unavailable during a Vite update.
-    console.warn("PiDeck Markdown enhancement failed; using plain text", error);
+    console.warn("kinglongv5 Markdown enhancement failed; using plain text", error);
   }
 
   render() {
