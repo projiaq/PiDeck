@@ -107,9 +107,7 @@ describe("SettingsPage navigation guard", () => {
 
     await user.click(screen.getByRole("button", { name: "Shortcuts" }));
 
-    expect(
-      screen.getByRole("heading", { name: "Keyboard shortcuts" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Keyboard shortcuts" })).toBeInTheDocument();
     expect(screen.getByText("New session")).toBeInTheDocument();
     expect(screen.getByText("Ctrl+N")).toBeInTheDocument();
     expect(screen.getByText("Show keyboard shortcuts")).toBeInTheDocument();
@@ -159,9 +157,7 @@ describe("SettingsPage navigation guard", () => {
     await user.type(input, "559");
     await user.tab();
 
-    expect(screen.getByRole("alert")).toHaveTextContent(
-      "Enter a whole number of at least 560px.",
-    );
+    expect(screen.getByRole("alert")).toHaveTextContent("Enter a whole number of at least 560px.");
     expect(useAppStore.getState().desktopSettings?.conversationContentWidth).toBeUndefined();
 
     await user.click(input);
@@ -193,9 +189,7 @@ describe("SettingsPage navigation guard", () => {
 
     await user.click(automatic);
     await waitFor(() =>
-      expect(
-        useAppStore.getState().desktopSettings?.extensionDecisionPresentation,
-      ).toBe("auto"),
+      expect(useAppStore.getState().desktopSettings?.extensionDecisionPresentation).toBe("auto"),
     );
     expect(request).toHaveBeenNthCalledWith(
       1,
@@ -207,9 +201,9 @@ describe("SettingsPage navigation guard", () => {
 
     await user.click(legacy);
     await waitFor(() =>
-      expect(
-        useAppStore.getState().desktopSettings?.extensionDecisionPresentation,
-      ).toBe("legacy-modal"),
+      expect(useAppStore.getState().desktopSettings?.extensionDecisionPresentation).toBe(
+        "legacy-modal",
+      ),
     );
     expect(request).toHaveBeenNthCalledWith(
       2,

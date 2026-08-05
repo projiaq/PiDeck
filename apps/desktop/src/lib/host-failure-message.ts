@@ -11,10 +11,7 @@ function truncate(value: string, maxLength: number): string {
 }
 
 /** Keeps fatal UI text readable while native stderr remains available in the console. */
-export function summarizeHostFailure(
-  message: string,
-  maxLength = DEFAULT_MAX_LENGTH,
-): string {
+export function summarizeHostFailure(message: string, maxLength = DEFAULT_MAX_LENGTH): string {
   const exitMatch = message.match(/^kinglongv5 Host exited \(([^)]+)\)/);
   const prefix = exitMatch ? `kinglongv5 Host exited (${exitMatch[1]})` : "kinglongv5 Host failed";
   const stderrMarker = ". stderr: ";
