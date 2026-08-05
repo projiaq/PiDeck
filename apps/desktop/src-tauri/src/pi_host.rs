@@ -449,7 +449,7 @@ async fn wait_for_unix_child_exit_without_reaping(
     }
 }
 
-/// Manages the Node Pi Host sidecar process.
+/// Manages the Node kinglongv5 Host sidecar process.
 /// Rust owns process lifecycle only — no Pi business logic.
 pub struct PiHostManager {
     app: AppHandle,
@@ -961,7 +961,7 @@ impl PiHostManager {
         }
 
         Err(
-            "Pi Host entry not found. Dev: run `pnpm build`. Release: stage resources via package:sidecar:with-node."
+            "kinglongv5 Host entry not found. Dev: run `pnpm build`. Release: stage resources via package:sidecar:with-node."
                 .into(),
         )
     }
@@ -1002,7 +1002,7 @@ impl PiHostManager {
             .map_err(|e| format!("create agentDir {}: {e}", agent_dir.display()))?;
         std::fs::create_dir_all(&host_cache_dir).map_err(|e| {
             format!(
-                "create Pi Host cache directory {}: {e}",
+                "create kinglongv5 Host cache directory {}: {e}",
                 host_cache_dir.display()
             )
         })?;
@@ -1148,7 +1148,7 @@ impl PiHostManager {
                         let _ = app_err.emit("pi-host-stderr", trimmed);
                     }
                     Err(error) if is_host_line_too_long(&error) => {
-                        let message = format!("Pi Host stderr line truncated: {error}");
+                        let message = format!("kinglongv5 Host stderr line truncated: {error}");
                         {
                             let mut logs = stderr_buf.lock().await;
                             push_stderr_tail(&mut logs, message.clone(), 50);
@@ -1158,7 +1158,7 @@ impl PiHostManager {
                         continue;
                     }
                     Err(error) => {
-                        let message = format!("Pi Host stderr transport read failed: {error}");
+                        let message = format!("kinglongv5 Host stderr transport read failed: {error}");
                         {
                             let mut logs = stderr_buf.lock().await;
                             push_stderr_tail(&mut logs, message.clone(), 50);
@@ -1223,13 +1223,13 @@ impl PiHostManager {
                             }
                         }
                         Err(error) if is_host_line_too_long(&error) => {
-                            let message = format!("Pi Host stdout frame dropped: {error}");
+                            let message = format!("kinglongv5 Host stdout frame dropped: {error}");
                             eprintln!("[pideck] {message}");
                             let _ = app_out.emit("pi-host-stderr", message);
                             continue;
                         }
                         Err(error) => {
-                            let message = format!("Pi Host stdout transport read failed: {error}");
+                            let message = format!("kinglongv5 Host stdout transport read failed: {error}");
                             eprintln!("[pideck] {message}");
                             read_failure = Some(message);
                             break;
@@ -1251,9 +1251,9 @@ impl PiHostManager {
                     let detail = match (read_failure, tail.is_empty()) {
                         (Some(error), true) => error,
                         (Some(error), false) => format!("{error}. stderr: {}", tail.join(" | ")),
-                        (None, true) => "Pi Host process exited (no stderr)".to_string(),
+                        (None, true) => "kinglongv5 Host process exited (no stderr)".to_string(),
                         (None, false) => {
-                            format!("Pi Host process exited. stderr: {}", tail.join(" | "))
+                            format!("kinglongv5 Host process exited. stderr: {}", tail.join(" | "))
                         }
                     };
                     if let Some(tx) = ready_tx.lock().await.take() {
@@ -1417,7 +1417,7 @@ impl PiHostManager {
                         logs.join(" | ")
                     }
                 };
-                return Err(format!("Pi Host exited ({status}). stderr: {detail}"));
+                return Err(format!("kinglongv5 Host exited ({status}). stderr: {detail}"));
             }
         }
         #[cfg(not(unix))]
@@ -1438,7 +1438,7 @@ impl PiHostManager {
                             logs.join(" | ")
                         }
                     };
-                    return Err(format!("Pi Host exited ({status}). stderr: {detail}"));
+                    return Err(format!("kinglongv5 Host exited ({status}). stderr: {detail}"));
                 }
                 Ok(None) => {}
                 Err(e) => return Err(format!("host wait error: {e}")),

@@ -87,14 +87,14 @@ describe("HostSettings", () => {
     render(<HostSettings />);
 
     await user.click(screen.getByRole("button", { name: "Restart Host" }));
-    const dialog = screen.getByRole("dialog", { name: "Restart Pi Host?" });
+    const dialog = screen.getByRole("dialog", { name: "Restart kinglongv5 Host?" });
     expect(dialog).toHaveTextContent("Any running agent turn is stopped immediately");
 
     await user.click(screen.getByRole("button", { name: "Cancel" }));
     expect(invokeMock).not.toHaveBeenCalled();
 
     await user.click(screen.getByRole("button", { name: "Restart Host" }));
-    const reopened = screen.getByRole("dialog", { name: "Restart Pi Host?" });
+    const reopened = screen.getByRole("dialog", { name: "Restart kinglongv5 Host?" });
     await user.click(within(reopened).getByRole("button", { name: "Restart Host" }));
     await waitFor(() => expect(invokeMock).toHaveBeenCalledWith("pi_host_restart"));
   });
@@ -225,7 +225,7 @@ describe("HostSettings", () => {
       useAppStore
         .getState()
         .notifications.some((item) =>
-          item.message.includes("restart Pi Host to apply"),
+          item.message.includes("restart kinglongv5 Host to apply"),
         ),
     ).toBe(true);
   });

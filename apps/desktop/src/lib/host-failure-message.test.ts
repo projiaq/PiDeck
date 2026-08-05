@@ -4,11 +4,11 @@ import { summarizeHostFailure } from "./host-failure-message.js";
 describe("summarizeHostFailure", () => {
   it("uses the final structured stderr error without exposing its stack", () => {
     const message = [
-      "Pi Host exited (exit status: 1). stderr: " +
-        JSON.stringify({ level: "info", message: "Pi Host ready" }),
+      "kinglongv5 Host exited (exit status: 1). stderr: " +
+        JSON.stringify({ level: "info", message: "kinglongv5 Host ready" }),
       JSON.stringify({
         level: "error",
-        message: "Uncaught exception in Pi Host",
+        message: "Uncaught exception in kinglongv5 Host",
         meta: {
           error: "This extension ctx is stale after session replacement or reload. Do not reuse it.",
           stack: "very long stack",
@@ -17,7 +17,7 @@ describe("summarizeHostFailure", () => {
     ].join(" | ");
 
     expect(summarizeHostFailure(message)).toBe(
-      "Pi Host exited (exit status: 1): This extension ctx is stale after session replacement or reload.",
+      "kinglongv5 Host exited (exit status: 1): This extension ctx is stale after session replacement or reload.",
     );
   });
 

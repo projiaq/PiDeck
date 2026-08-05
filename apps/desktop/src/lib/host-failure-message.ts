@@ -15,8 +15,8 @@ export function summarizeHostFailure(
   message: string,
   maxLength = DEFAULT_MAX_LENGTH,
 ): string {
-  const exitMatch = message.match(/^Pi Host exited \(([^)]+)\)/);
-  const prefix = exitMatch ? `Pi Host exited (${exitMatch[1]})` : "Pi Host failed";
+  const exitMatch = message.match(/^kinglongv5 Host exited \(([^)]+)\)/);
+  const prefix = exitMatch ? `kinglongv5 Host exited (${exitMatch[1]})` : "kinglongv5 Host failed";
   const stderrMarker = ". stderr: ";
   const stderr = message.includes(stderrMarker)
     ? message.slice(message.indexOf(stderrMarker) + stderrMarker.length)

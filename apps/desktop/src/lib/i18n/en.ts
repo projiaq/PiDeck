@@ -63,10 +63,10 @@ export const en = {
 
   // Startup
   startupPreparing: "Preparing kinglongv5",
-  startupStartingHost: "Starting Pi Host",
+  startupStartingHost: "Starting kinglongv5 Host",
   startupRestoringWorkspace: "Restoring workspace",
   startupRestoringSession: "Restoring session",
-  startupReconnecting: "Reconnecting to Pi Host",
+  startupReconnecting: "Reconnecting to kinglongv5 Host",
   startupReady: "Ready",
 
   // Settings shell
@@ -87,7 +87,7 @@ export const en = {
     "The Provider form has edits that were not saved. Closing Settings will discard them.",
 
   // General
-  generalSubtitle: "Desktop behavior and Pi Host configuration",
+  generalSubtitle: "Desktop behavior and kinglongv5 Host configuration",
   generalAppearanceGroup: "Appearance & startup",
   generalTheme: "Theme",
   generalThemeDesc: "Follow the system appearance or force light / dark.",
@@ -101,7 +101,7 @@ export const en = {
   generalConversationWidthError: "Enter a whole number of at least {min}px.",
   generalRestoreSession: "Restore last session",
   generalRestoreSessionDesc: "Reopen your last workspace and conversation when kinglongv5 starts.",
-  generalAutoRestart: "Auto-restart Pi Host",
+  generalAutoRestart: "Auto-restart kinglongv5 Host",
   generalAutoRestartDesc:
     "If the host process crashes, restart it once automatically before showing an error.",
   generalExtensionDecisionGroup: "Extension prompts",
@@ -124,13 +124,13 @@ export const en = {
   generalDetectShells: "Detect shells again",
   generalAdvancedGroup: "More settings",
   generalAdvancedDesc:
-    "Pi reads advanced options from settings.json in the agent directory — for example httpProxy, compaction, retry, and npmCommand. Open the file to edit it by hand.",
+    "kinglongv5 reads advanced options from settings.json in the agent directory — for example httpProxy, compaction, retry, and npmCommand. Open the file to edit it by hand.",
   generalAdvancedOpenFile: "Open settings.json",
   generalAdvancedRestartHint: "Changes take effect after restarting the Host.",
   notifSettingsFileOpenFailed: "Couldn't open the settings file",
 
   // Host section
-  hostSubtitle: "Pi Host runtime, capabilities, and app info",
+  hostSubtitle: "kinglongv5 Host runtime, capabilities, and app info",
   hostRuntimeGroup: "Runtime",
   hostPhase: "Phase",
   hostAgentDir: "Agent dir",
@@ -141,7 +141,7 @@ export const en = {
   hostChangeAgentDir: "Change agent directory…",
   hostRestart: "Restart Host",
   hostRestartCaption: "Stops any running agent turn immediately and reconnects.",
-  hostRestartDialogTitle: "Restart Pi Host?",
+  hostRestartDialogTitle: "Restart kinglongv5 Host?",
   hostRestartDialogBody:
     "Any running agent turn is stopped immediately. Sessions reconnect once the Host is ready again.",
   hostCapabilitiesGroup: "Capabilities",
@@ -162,7 +162,7 @@ export const en = {
   notifUpdateAvailable: "kinglongv5 {version} is available — install it from Settings → Host",
   notifUpdateCheckFailed: "Update check failed",
   notifUpdateInstallFailed: "Update install failed",
-  notifAgentDirChanged: "Agent directory changed — restart Pi Host to apply",
+  notifAgentDirChanged: "Agent directory changed — restart kinglongv5 Host to apply",
   notifAgentDirOpenFailed: "Open agent directory failed",
   notifAgentDirChangeFailed: "Change agent directory failed",
   notifHostRestarted: "Host restarted — waiting for ready…",
@@ -326,7 +326,7 @@ export const en = {
   notifProviderDisabled: "{name} disabled",
   notifProviderDeleted: "Provider deleted",
   notifProviderRestartRequired:
-    "Pi Host must be restarted before saving Models URL or compatibility overrides. Restart Host in Host settings, then save again.",
+    "kinglongv5 Host must be restarted before saving Models URL or compatibility overrides. Restart Host in Host settings, then save again.",
 
   // Packages
   packagesViewGroup: "Packages view",
@@ -375,7 +375,7 @@ export const en = {
   packagesIdentity: "Identity",
   packagesTypeVersion: "Type and version",
   packagesInstalledPath: "Installed path",
-  packagesManagedByPi: "Managed by Pi",
+  packagesManagedByPi: "Managed by kinglongv5",
   packagesRelationshipsGroup: "Relationships",
   packagesReplacedByProjectLabel: "Replaced by project: ",
   packagesOverridesUserLabel: "Overrides user package: ",
@@ -435,7 +435,7 @@ export const en = {
   packagesNoResourcesMatch: "No resources match these filters.",
   packagesNoResourcesInMode: "No resources are available in {mode} mode.",
   packagesInstallToPopulate:
-    "Install a package or add a standalone Pi resource to populate this view.",
+    "Install a package or add a standalone kinglongv5 resource to populate this view.",
   packagesAdjustFilters: "Adjust the mode or filters to see other resources.",
   packagesPrefInherit: "inherit",
   packagesPrefEnabled: "enabled",
@@ -509,7 +509,7 @@ export const en = {
   sidebarExpand: "Expand sidebar",
   sidebarCollapse: "Collapse sidebar",
   sidebarHostOffline: "Host offline",
-  sidebarConnecting: "Connecting to Pi Host",
+  sidebarConnecting: "Connecting to kinglongv5 Host",
   sidebarResync: "Resynchronizing with Host",
   sidebarLoadingSnapshots: "Loading Host snapshots",
   notifCreateSessionFailed: "Create session failed",
@@ -609,7 +609,7 @@ export const en = {
 
   // Transcript
   transcriptShowEarlier: "Show earlier messages ({count} hidden)",
-  transcriptPiWorking: "Pi is working...",
+  transcriptPiWorking: "kinglongv5 is working...",
   transcriptJumpLatest: "Jump to latest message",
   transcriptAttachmentAlt: "Attachment",
   transcriptToolResultAlt: "Tool result",
@@ -746,7 +746,7 @@ export const en = {
   composerRemoveNamedFile: "Remove {name}",
   composerRemoveImage: "Remove image",
   composerUnavailable: "Chat unavailable",
-  composerPlaceholder: "Message Pi  ( / commands · @ files )",
+  composerPlaceholder: "Message kinglongv5  ( / commands · @ files )",
   composerDecisionPending: "Answer the Extension question above before sending a message.",
   composerAttach: "Attach PDF, DOCX, image, or text file",
   composerQueueMessageShortcut: "Queue message (Enter)",

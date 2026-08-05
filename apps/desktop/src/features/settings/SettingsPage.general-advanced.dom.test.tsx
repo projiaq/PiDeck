@@ -110,7 +110,7 @@ describe("GeneralSettings advanced block", () => {
     render(<SettingsPage initialSection="general" />);
 
     await user.click(screen.getByRole("button", { name: "Restart Host" }));
-    const dialog = screen.getByRole("dialog", { name: "Restart Pi Host?" });
+    const dialog = screen.getByRole("dialog", { name: "Restart kinglongv5 Host?" });
     await user.click(within(dialog).getByRole("button", { name: "Restart Host" }));
 
     await waitFor(() => expect(invokeMock).toHaveBeenCalledWith("pi_host_restart"));

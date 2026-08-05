@@ -53,7 +53,7 @@ describe("startup stage", () => {
   it("announces localized progress and exposes the exit state", () => {
     render(<StartupScreen stage="starting-host" exiting />);
     const status = screen.getByRole("status");
-    expect(status).toHaveTextContent("正在启动 Pi Host");
+    expect(status).toHaveTextContent("正在启动 kinglongv5 Host");
     expect(status).toHaveAttribute("aria-live", "polite");
     expect(status).toHaveAttribute("aria-busy", "false");
     expect(status).toHaveAttribute("data-startup-exiting", "true");

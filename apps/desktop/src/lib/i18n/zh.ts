@@ -60,10 +60,10 @@ export const zh: Record<MessageKey, string> = {
 
   // Startup
   startupPreparing: "正在准备 kinglongv5",
-  startupStartingHost: "正在启动 Pi Host",
+  startupStartingHost: "正在启动 kinglongv5 Host",
   startupRestoringWorkspace: "正在恢复工作区",
   startupRestoringSession: "正在恢复会话",
-  startupReconnecting: "正在重新连接 Pi Host",
+  startupReconnecting: "正在重新连接 kinglongv5 Host",
   startupReady: "准备完成",
 
   // Settings shell
@@ -82,7 +82,7 @@ export const zh: Record<MessageKey, string> = {
   settingsDiscardCloseBody: "模型服务表单有未保存的修改，关闭设置将丢弃它们。",
 
   // General
-  generalSubtitle: "桌面行为与 Pi Host 配置",
+  generalSubtitle: "桌面行为与 kinglongv5 Host 配置",
   generalAppearanceGroup: "外观与启动",
   generalTheme: "主题",
   generalThemeDesc: "跟随系统外观，或固定为浅色 / 深色。",
@@ -95,7 +95,7 @@ export const zh: Record<MessageKey, string> = {
   generalConversationWidthError: "请输入不小于 {min}px 的整数。",
   generalRestoreSession: "恢复上次会话",
   generalRestoreSessionDesc: "启动 kinglongv5 时重新打开上次的工作区和对话。",
-  generalAutoRestart: "自动重启 Pi Host",
+  generalAutoRestart: "自动重启 kinglongv5 Host",
   generalAutoRestartDesc: "主机进程崩溃时先自动重启一次，仍失败才提示错误。",
   generalExtensionDecisionGroup: "Extension 请求",
   generalExtensionDecision: "Extension 请求呈现方式",
@@ -115,13 +115,13 @@ export const zh: Record<MessageKey, string> = {
   generalDetectShells: "重新检测 Shell",
   generalAdvancedGroup: "更多设置",
   generalAdvancedDesc:
-    "Pi 会从 agent 目录下的 settings.json 读取高级选项,例如 httpProxy、compaction、retry、npmCommand。可打开文件手动编辑。",
+    "kinglongv5 会从 agent 目录下的 settings.json 读取高级选项,例如 httpProxy、compaction、retry、npmCommand。可打开文件手动编辑。",
   generalAdvancedOpenFile: "打开 settings.json",
   generalAdvancedRestartHint: "更改将在重启 Host 后生效。",
   notifSettingsFileOpenFailed: "无法打开设置文件",
 
   // Host section
-  hostSubtitle: "Pi Host 运行时、能力与应用信息",
+  hostSubtitle: "kinglongv5 Host 运行时、能力与应用信息",
   hostRuntimeGroup: "运行时",
   hostPhase: "阶段",
   hostAgentDir: "Agent 目录",
@@ -132,7 +132,7 @@ export const zh: Record<MessageKey, string> = {
   hostChangeAgentDir: "更换 Agent 目录…",
   hostRestart: "重启 Host",
   hostRestartCaption: "会立即停止进行中的对话并重新连接。",
-  hostRestartDialogTitle: "重启 Pi Host？",
+  hostRestartDialogTitle: "重启 kinglongv5 Host？",
   hostRestartDialogBody: "进行中的对话会被立即停止；Host 就绪后会话将自动重连。",
   hostCapabilitiesGroup: "能力",
   hostCapPackageUpdateCheck: "包更新检查",
@@ -152,7 +152,7 @@ export const zh: Record<MessageKey, string> = {
   notifUpdateAvailable: "发现新版本 {version}——可在 设置 → 主机 中安装",
   notifUpdateCheckFailed: "检查更新失败",
   notifUpdateInstallFailed: "安装更新失败",
-  notifAgentDirChanged: "Agent 目录已更改——重启 Pi Host 后生效",
+  notifAgentDirChanged: "Agent 目录已更改——重启 kinglongv5 Host 后生效",
   notifAgentDirOpenFailed: "打开 Agent 目录失败",
   notifAgentDirChangeFailed: "更换 Agent 目录失败",
   notifHostRestarted: "Host 已重启——等待就绪…",
@@ -314,7 +314,7 @@ export const zh: Record<MessageKey, string> = {
   notifProviderDisabled: "已禁用 {name}",
   notifProviderDeleted: "已删除模型服务",
   notifProviderRestartRequired:
-    "保存模型列表 URL 或兼容性覆盖前需要重启 Pi Host。请在「主机」设置中重启后再保存。",
+    "保存模型列表 URL 或兼容性覆盖前需要重启 kinglongv5 Host。请在「主机」设置中重启后再保存。",
 
   // Packages
   packagesViewGroup: "包管理视图",
@@ -363,7 +363,7 @@ export const zh: Record<MessageKey, string> = {
   packagesIdentity: "标识",
   packagesTypeVersion: "类型与版本",
   packagesInstalledPath: "安装路径",
-  packagesManagedByPi: "由 Pi 管理",
+  packagesManagedByPi: "由 kinglongv5 管理",
   packagesRelationshipsGroup: "关联关系",
   packagesReplacedByProjectLabel: "被项目替代：",
   packagesOverridesUserLabel: "覆盖用户包：",
@@ -418,7 +418,7 @@ export const zh: Record<MessageKey, string> = {
   packagesNoResources: "暂无可用资源。",
   packagesNoResourcesMatch: "没有符合筛选条件的资源。",
   packagesNoResourcesInMode: "{mode}模式下暂无可用资源。",
-  packagesInstallToPopulate: "安装一个包，或添加独立的 Pi 资源以填充此视图。",
+  packagesInstallToPopulate: "安装一个包，或添加独立的 kinglongv5 资源以填充此视图。",
   packagesAdjustFilters: "调整模式或筛选条件以查看其他资源。",
   packagesPrefInherit: "继承",
   packagesPrefEnabled: "启用",
@@ -486,7 +486,7 @@ export const zh: Record<MessageKey, string> = {
   sidebarExpand: "展开侧栏",
   sidebarCollapse: "收起侧栏",
   sidebarHostOffline: "Host 离线",
-  sidebarConnecting: "正在连接 Pi Host",
+  sidebarConnecting: "正在连接 kinglongv5 Host",
   sidebarResync: "正在与 Host 重新同步",
   sidebarLoadingSnapshots: "正在加载 Host 快照",
   notifCreateSessionFailed: "创建会话失败",
@@ -583,7 +583,7 @@ export const zh: Record<MessageKey, string> = {
 
   // Transcript
   transcriptShowEarlier: "显示更早的消息（已隐藏 {count} 条）",
-  transcriptPiWorking: "Pi 正在处理...",
+  transcriptPiWorking: "kinglongv5 正在处理...",
   transcriptJumpLatest: "跳到最新消息",
   transcriptAttachmentAlt: "附件",
   transcriptToolResultAlt: "工具结果",
@@ -717,7 +717,7 @@ export const zh: Record<MessageKey, string> = {
   composerRemoveNamedFile: "移除 {name}",
   composerRemoveImage: "移除图片",
   composerUnavailable: "对话不可用",
-  composerPlaceholder: "给 Pi 发消息  ( / 命令 · @ 文件 )",
+  composerPlaceholder: "给 kinglongv5 发消息  ( / 命令 · @ 文件 )",
   composerDecisionPending: "请先回答上方的扩展问题，再发送消息。",
   composerAttach: "添加 PDF、DOCX、图片或文本文件",
   composerQueueMessageShortcut: "消息加入队列（Enter）",

@@ -92,7 +92,7 @@ describe("SettingsPage navigation guard", () => {
     const user = userEvent.setup();
     render(<SettingsPage initialSection="general" />);
 
-    expect(screen.getByText("Auto-restart Pi Host")).toBeInTheDocument();
+    expect(screen.getByText("Auto-restart kinglongv5 Host")).toBeInTheDocument();
     expect(screen.queryByText("Capabilities")).not.toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Host" }));
