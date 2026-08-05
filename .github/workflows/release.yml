@@ -6,14 +6,15 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Existing tag to release (e.g. v0.1.1)"
-        required: true
+        description: "Existing tag to release (e.g. v0.1.4). Leave blank to build from the selected branch."
+        required: false
+        default: ""
 
 permissions:
   contents: write
 
 concurrency:
-  group: release-${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+  group: release-${{ github.event_name == 'workflow_dispatch' && (inputs.tag || github.ref) || github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -37,11 +38,11 @@ jobs:
     env:
       TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
       TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
-      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && (inputs.tag || github.ref_name) || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+          ref: ${{ github.event_name == 'workflow_dispatch' && (inputs.tag || github.ref) || github.ref }}
       - uses: pnpm/action-setup@v4
         with:
           version: 9.15.0
@@ -127,11 +128,11 @@ jobs:
     timeout-minutes: 15
     env:
       GH_TOKEN: ${{ github.token }}
-      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && (inputs.tag || github.ref_name) || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+          ref: ${{ github.event_name == 'workflow_dispatch' && (inputs.tag || github.ref) || github.ref }}
       - uses: actions/download-artifact@v4
         with:
           pattern: release-platform-*
@@ -151,11 +152,11 @@ jobs:
           assets=(release-output/*)
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
             gh release upload "$RELEASE_TAG" --clobber "${assets[@]}"
-            gh release edit "$RELEASE_TAG" --draft --title "PiDeck $RELEASE_TAG"
+            gh release edit "$RELEASE_TAG" --draft --title "kinglongv5 $RELEASE_TAG"
           else
             gh release create "$RELEASE_TAG" \
               --draft \
-              --title "PiDeck $RELEASE_TAG" \
+              --title "kinglongv5 $RELEASE_TAG" \
               --generate-notes \
               "${assets[@]}"
           fi
