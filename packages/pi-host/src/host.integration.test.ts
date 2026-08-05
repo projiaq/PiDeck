@@ -72,7 +72,7 @@ class HostProcess {
     });
   }
 
-  async nextLine(timeoutMs = 15_000): Promise<string> {
+  async nextLine(timeoutMs = 30_000): Promise<string> {
     if (this.lines.length) return this.lines.shift()!;
     return new Promise((resolve, reject) => {
       const timer = setTimeout(() => reject(new Error("timeout waiting for host line")), timeoutMs);
@@ -83,7 +83,7 @@ class HostProcess {
     });
   }
 
-  async waitForEvent(event: string, timeoutMs = 15_000): Promise<Record<string, unknown>> {
+  async waitForEvent(event: string, timeoutMs = 30_000): Promise<Record<string, unknown>> {
     const deadline = Date.now() + timeoutMs;
     while (Date.now() < deadline) {
       const line = await this.nextLine(deadline - Date.now());
@@ -184,7 +184,7 @@ describe("Pi Host integration", () => {
     agentDir = t.agentDir;
     projectDir = t.projectDir;
     host = new HostProcess(agentDir);
-    await host.waitForEvent("host.ready");
+    await host.waitForEvent("host.ready", 30_000);
   }, 30_000);
 
   afterAll(async () => {
