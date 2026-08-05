@@ -175,7 +175,7 @@ export function providerSaveFailureMessage(message: string, provider: ProviderDr
     message.includes("invalid provider.save params") &&
     (provider.modelsUrl !== undefined || provider.compat !== undefined)
   ) {
-    return "Pi Host must be restarted before saving Models URL or compatibility overrides. Restart Host in Host settings, then save again.";
+    return "kinglongv5 Host must be restarted before saving Models URL or compatibility overrides. Restart Host in Host settings, then save again.";
   }
   return message;
 }

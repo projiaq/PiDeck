@@ -115,16 +115,16 @@ describe("App Host fatal event handling", () => {
       null,
     );
 
-    wire.emit(fatal(PROCESS_EXIT_SENTINEL, "Pi Host exited unexpectedly"));
+    wire.emit(fatal(PROCESS_EXIT_SENTINEL, "kinglongv5 Host exited unexpectedly"));
 
-    await expect(pending).rejects.toThrow("Pi Host exited unexpectedly");
+    await expect(pending).rejects.toThrow("kinglongv5 Host exited unexpectedly");
     expect(useAppStore.getState()).toMatchObject({
       lastSequence: 7,
-      hostFatal: "Pi Host failed: Pi Host exited unexpectedly",
+      hostFatal: "kinglongv5 Host failed: kinglongv5 Host exited unexpectedly",
       connecting: false,
     });
     expect(useAppStore.getState().notifications.at(-1)).toMatchObject({
-      message: "Host unavailable: Pi Host failed: Pi Host exited unexpectedly",
+      message: "Host unavailable: kinglongv5 Host failed: kinglongv5 Host exited unexpectedly",
       level: "error",
     });
     expect(agentEvents.flush).toHaveBeenCalledTimes(1);
